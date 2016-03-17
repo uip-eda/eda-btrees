@@ -82,7 +82,7 @@ namespace ibtree {
         else if (val < root->data) return del(root->left, val);
         else if (val > root->data) return del(root->right, val);
         else {
-            if (root->left == NULL || root->right == NULL) root = NULL;
+            if (root->left == NULL && root->right == NULL) root = NULL;
             else {
                 struct node *swap = min_v(root->right);
                 root->data = swap->data;
